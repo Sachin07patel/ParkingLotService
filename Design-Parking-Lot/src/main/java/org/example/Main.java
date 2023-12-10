@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        ParkingLotService parkingLot=new ParkingLotService(15);
+        ParkingLotService parkingLot = new ParkingLotService(15);
         while(true){
             System.out.println("Enter 1 to enter car details for parking car");
             System.out.println("Enter 2 to get registration numbers of all cars of specific color");
@@ -20,7 +20,7 @@ public class Main {
                 System.out.println("Enter car registration number : ");
                 String registrationNumber=sc.nextLine();
                 System.out.println("Enter car color : ");
-                String color= sc.nextLine();;
+                String color= sc.nextLine();
                 Car car =new Car(registrationNumber,color);
                 parkingLot.parkCar(car);
             }else if(number.equals("2")){

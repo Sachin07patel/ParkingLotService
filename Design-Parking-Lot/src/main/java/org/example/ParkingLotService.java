@@ -6,7 +6,7 @@ import org.example.models.Ticket;
 import java.util.*;
 
 public class ParkingLotService {
-    private int availableSpots;
+    private int availableSpots = 0;
 
     private Map<Integer,Car> parkingSpots;
     private Map<Car, Ticket> carTicketMap;
@@ -24,11 +24,11 @@ public class ParkingLotService {
                 return;
             }
         }
-        if(availableSpots>0){
-            Ticket ticket=new Ticket(UUID.randomUUID().toString(),new Date(),car.getRegistrationNumber(),1);
+        if(availableSpots<15){
+            Ticket ticket=new Ticket(UUID.randomUUID().toString(),new Date(),car.getRegistrationNumber(),1,2);
             parkingSpots.put(availableSpots,car);
             carTicketMap.put(car,ticket);
-            availableSpots--;
+            availableSpots++;
             System.out.println("Car parked with ticket Number : "+ticket.getTicketNumber());
         }
         else{

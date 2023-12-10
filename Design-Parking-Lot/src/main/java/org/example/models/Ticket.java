@@ -6,6 +6,8 @@ public class Ticket {
     private String ticketNumber;
     private Date entryDate;
 
+    private int exitGateNumber;
+
     private int entryGateNumber;
 
     private String carRegistrationNumber;
@@ -14,15 +16,20 @@ public class Ticket {
         return entryGateNumber;
     }
 
+    public int getExitGateNumber(){ return exitGateNumber; }
+
     public void setEntryGateNumber(int entryGateNumber) {
         this.entryGateNumber = entryGateNumber;
     }
 
-    public Ticket(String ticketNumber, Date entryDate, String carRegistrationNumber,int entryGateNumber) {
+    public void setExitGateNumber(int exitGateNumber) { this.exitGateNumber = exitGateNumber; }
+
+    public Ticket(String ticketNumber, Date entryDate, String carRegistrationNumber,int entryGateNumber, int exitGateNumber) {
         this.ticketNumber = ticketNumber;
         this.entryDate = entryDate;
         this.carRegistrationNumber = carRegistrationNumber;
-        this.entryGateNumber=entryGateNumber;
+        this.entryGateNumber = entryGateNumber;
+        this.exitGateNumber = exitGateNumber;
     }
 
     public String getTicketNumber() {
